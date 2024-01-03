@@ -12,4 +12,5 @@ import { RoomsComponent } from "./rooms/rooms.component";
 })
 export class AppComponent {
   title = 'hotelinventoryapp';
+  role = 'Admin';
 }
