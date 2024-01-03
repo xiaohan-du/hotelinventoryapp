@@ -46,6 +46,15 @@ export class RoomsComponent implements OnInit {
       photos: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       checkinTime: new Date('03-01-2021').toLocaleString(),
       checkoutTime: new Date('04-01-2021').toLocaleString()
+    },
+    {
+      roomNumber: 4,
+      roomType: "Super Luxury",
+      amenities: "Air Conditioner",
+      price: 15000,
+      photos: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      checkinTime: new Date('04-01-2021').toLocaleString(),
+      checkoutTime: new Date('05-01-2021').toLocaleString()
     }
   ]
 
