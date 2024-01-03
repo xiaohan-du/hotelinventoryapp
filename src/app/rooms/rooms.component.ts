@@ -10,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class RoomsComponent implements OnInit {
   hotelName = 'Hilton Hotel';
   noOfRooms = 10;
+  hideRooms = false;
+
+  toggle() {
+    this.hideRooms = !this.hideRooms;
+  }
   constructor() {}
   ngOnInit(): void {
       

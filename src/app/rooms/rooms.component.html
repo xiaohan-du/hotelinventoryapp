@@ -1,3 +1,6 @@
 <h2>Welcome to {{hotelName}}!</h2>
 
-There are <div [innerText]="noOfRooms"></div> rooms
+<div [hidden]="hideRooms">
+  There are <div [innerText]="noOfRooms"></div> rooms
+</div>
+<button (click)="toggle()">Toggle rooms</button>
