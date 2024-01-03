@@ -3,4 +3,7 @@
 <div [hidden]="hideRooms">
   There are <div [innerText]="noOfRooms"></div> rooms
 </div>
+<div *ngIf="rooms.availableRooms > 0">
+  Rooms List
+</div>
 <button (click)="toggle()">Toggle rooms</button>
