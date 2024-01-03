@@ -1,7 +1,10 @@
 <h2>Welcome to {{hotelName}}!</h2>
 
 <div [hidden]="hideRooms">
-  There are <div [innerText]="noOfRooms"></div> rooms
+  There are <div [innerText]="rooms.totalRooms"></div> rooms in total
+</div>
+<div>
+  Available rooms: {{ rooms.availableRooms ? rooms.availableRooms : 'No rooms' }}
 </div>
 <div *ngIf="rooms.availableRooms > 0">
   Rooms List

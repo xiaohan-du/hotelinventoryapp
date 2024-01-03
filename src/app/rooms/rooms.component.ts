@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class RoomsComponent implements OnInit {
   hotelName = 'Hilton Hotel';
-  noOfRooms = 10;
   hideRooms = false;
 
   rooms: Room = {
