@@ -7,7 +7,7 @@
   Available rooms: {{ rooms.availableRooms ? rooms.availableRooms : 'No rooms' }}
 </div>
 <div>
-  {{roomList | json}}
+  {{roomList | slice : 1 : 2 | json}}
 </div>
 <div *ngIf="rooms.availableRooms > 0">
   Rooms List
@@ -22,7 +22,7 @@
       <th>Checkin Time</th>
       <th>Checkout Time</th>
     </tr>
-    <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let room of roomList; let e = even; let o = odd; let i = index">
+    <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let room of roomList | slice : 0 : 2; let e = even; let o = odd; let i = index">
       <td>{{i | percent}}</td>
       <td>{{(e ? "Even" : "Odd") | lowercase}}</td>
       <td>{{room.roomNumber}}</td>
