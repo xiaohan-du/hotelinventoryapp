@@ -22,12 +22,14 @@ export class RoomsComponent implements OnInit {
 
   roomList: RoomList[] = [];
 
+  selectedRoom: RoomList | null = null;
+
   toggle() {
     this.hideRooms = !this.hideRooms;
   }
 
   selectRoom(room: RoomList) {
-    console.log(room);
+    this.selectedRoom = room;
   }
   constructor() {}
   ngOnInit(): void {
