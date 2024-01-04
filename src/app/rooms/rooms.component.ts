@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { CommonModule } from '@angular/common';
 import { RoomsListComponent } from "../rooms-list/rooms-list.component";
@@ -8,7 +8,8 @@ import { RoomsListComponent } from "../rooms-list/rooms-list.component";
   standalone: true,
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss',
-  imports: [CommonModule, RoomsListComponent]
+  imports: [CommonModule, RoomsListComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RoomsComponent implements OnInit {
   hotelName = 'Hilton Hotel';
@@ -23,6 +24,20 @@ export class RoomsComponent implements OnInit {
   roomList: RoomList[] = [];
 
   selectedRoom: RoomList | null = null;
+
+  addRoom() {
+    const room: RoomList = {
+      roomNumber: 5,
+      roomType: "Deluxe",
+      amenities: "Air Conditioner",
+      price: 2000,
+      photos: "https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      checkinTime: new Date('01-01-2021').toLocaleString(),
+      checkoutTime: new Date('02-01-2021').toLocaleString(),
+      rating: 4.8
+    };
+    this.roomList = [...this.roomList, room];
+  }
 
   toggle() {
     this.hideRooms = !this.hideRooms;
