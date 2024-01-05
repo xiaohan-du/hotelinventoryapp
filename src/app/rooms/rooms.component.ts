@@ -1,17 +1,18 @@
-import { ChangeDetectionStrategy, Component, DoCheck, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { CommonModule } from '@angular/common';
 import { RoomsListComponent } from "../rooms-list/rooms-list.component";
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
-  selector: 'app-rooms',
-  standalone: true,
-  templateUrl: './rooms.component.html',
-  styleUrl: './rooms.component.scss',
-  imports: [CommonModule, RoomsListComponent],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-rooms',
+    standalone: true,
+    templateUrl: './rooms.component.html',
+    styleUrl: './rooms.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule, RoomsListComponent, HeaderComponent]
 })
-export class RoomsComponent implements OnInit, DoCheck {
+export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   hotelName = 'Hilton Hotel';
   hideRooms = false;
 
@@ -21,11 +22,13 @@ export class RoomsComponent implements OnInit, DoCheck {
     bookedRooms: 5
   };
 
-  title = 'Room List';
+  title: string = 'Room List';
 
   roomList: RoomList[] = [];
 
   selectedRoom: RoomList | null = null;
+
+  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
 
   addRoom() {
     const room: RoomList = {
@@ -97,5 +100,9 @@ export class RoomsComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
       console.log('on check is called')
+  }
+
+  ngAfterViewInit(): void {
+    this.headerComponent.title = "Hotel app"
   }
 }
