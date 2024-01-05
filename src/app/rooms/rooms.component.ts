@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { CommonModule } from '@angular/common';
 import { RoomsListComponent } from "../rooms-list/rooms-list.component";
@@ -11,7 +11,7 @@ import { RoomsListComponent } from "../rooms-list/rooms-list.component";
   imports: [CommonModule, RoomsListComponent],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RoomsComponent implements OnInit {
+export class RoomsComponent implements OnInit, DoCheck {
   hotelName = 'Hilton Hotel';
   hideRooms = false;
 
@@ -93,5 +93,9 @@ export class RoomsComponent implements OnInit {
         rating: 4.1
       }
     ]
+  }
+
+  ngDoCheck(): void {
+      console.log('on check is called')
   }
 }
