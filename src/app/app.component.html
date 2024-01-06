@@ -4,10 +4,12 @@
   </div>
   <div *ngSwitchCase="'Admin'">
     <!-- <app-rooms></app-rooms> -->
-      <ng-template #user></ng-template>
-      <app-container>
-        <h1>This is from ng-content</h1>
-      </app-container>
+    <!-- <ng-template #user></ng-template> -->
+    <app-container>
+      <h1>This is from ng-content</h1>
+      <app-rooms></app-rooms>
+      <app-employee></app-employee>
+    </app-container>
   </div>
   <h1 #name></h1>
   <div *ngSwitchDefault>

@@ -4,13 +4,14 @@ import { RouterOutlet } from '@angular/router';
 import { RoomsComponent } from "./rooms/rooms.component";
 import { HeaderComponent } from "./header/header.component";
 import { ContainerComponent } from './container/container.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, RoomsComponent, HeaderComponent, ContainerComponent]
+    imports: [CommonModule, RouterOutlet, RoomsComponent, HeaderComponent, ContainerComponent, EmployeeComponent]
 })
 export class AppComponent implements AfterViewInit, OnInit {
   title = 'hotelinventoryapp';
