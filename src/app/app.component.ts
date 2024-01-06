@@ -17,6 +17,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
 
   ngAfterViewInit(): void {
-      this.vcr.createComponent(RoomsComponent);
+      const componentRef = this.vcr.createComponent(RoomsComponent);
+      componentRef.instance.rooms.totalRooms = 50;
   }
 }
