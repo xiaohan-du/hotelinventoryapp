@@ -5,6 +5,9 @@
   <div *ngSwitchCase="'Admin'">
     <!-- <app-rooms></app-rooms> -->
       <ng-template #user></ng-template>
+      <app-container>
+        <h1>This is from ng-content</h1>
+      </app-container>
   </div>
   <h1 #name></h1>
   <div *ngSwitchDefault>
