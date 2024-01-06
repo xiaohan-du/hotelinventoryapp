@@ -1,14 +1,12 @@
-<app-header></app-header>
 <div [ngSwitch]="role">
   <div *ngSwitchCase="'User'">
     Welcome User!
   </div>
   <div *ngSwitchCase="'Admin'">
     <!-- <app-rooms></app-rooms> -->
-    <div>
       <ng-template #user></ng-template>
-    </div>
   </div>
+  <h1 #name></h1>
   <div *ngSwitchDefault>
     You are not authorised to view!
   </div>

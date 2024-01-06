@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, DoCheck, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, DoCheck, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { CommonModule } from '@angular/common';
 import { RoomsListComponent } from "../rooms-list/rooms-list.component";
@@ -29,6 +29,8 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   selectedRoom: RoomList | null = null;
 
   @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
+
+  @ViewChildren(HeaderComponent) headerComponents!: QueryList<HeaderComponent>;
 
   addRoom() {
     const room: RoomList = {
@@ -104,5 +106,9 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.headerComponent.title = "Hotel app";
+    this.headerComponents.forEach((header, index) => {
+      header.title = `Hotel title ${index}`;
+    });
+    console.log(this.headerComponents);
   }
 }
