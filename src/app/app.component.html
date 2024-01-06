@@ -4,7 +4,10 @@
     Welcome User!
   </div>
   <div *ngSwitchCase="'Admin'">
-    <app-rooms></app-rooms>
+    <!-- <app-rooms></app-rooms> -->
+    <div>
+      <ng-template #user></ng-template>
+    </div>
   </div>
   <div *ngSwitchDefault>
     You are not authorised to view!

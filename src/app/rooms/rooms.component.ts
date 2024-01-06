@@ -99,10 +99,10 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   ngDoCheck(): void {
-      console.log('on check is called')
+      console.log('on check is called');
   }
 
   ngAfterViewInit(): void {
-    this.headerComponent.title = "Hotel app"
+    this.headerComponent.title = "Hotel app";
   }
 }
