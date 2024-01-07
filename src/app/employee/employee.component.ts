@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './employee.component.scss'
 })
 export class EmployeeComponent {
-
+  employeeName: string = 'John';
 }
