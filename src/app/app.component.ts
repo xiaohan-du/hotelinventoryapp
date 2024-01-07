@@ -19,8 +19,8 @@ export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
 
   ngAfterViewInit(): void {
-      const componentRef = this.vcr.createComponent(RoomsComponent);
-      componentRef.instance.rooms.totalRooms = 50;
+    //   const componentRef = this.vcr.createComponent(RoomsComponent);
+    //   componentRef.instance.rooms.totalRooms = 50;
   }
 
   @ViewChild('name', {static: true}) name!: ElementRef;
