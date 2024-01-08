@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { RoomList } from '../rooms/rooms';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './rooms-list.component.html',
   styleUrl: './rooms-list.component.scss'
 })
-export class RoomsListComponent implements OnInit, OnChanges {
+export class RoomsListComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() rooms: RoomList[] = [];
   @Input() title: string = '';
@@ -26,5 +26,9 @@ export class RoomsListComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
     changes['title'] && (this.title = changes['title'].currentValue.toUpperCase());
+  }
+
+  ngOnDestroy(): void {
+      console.log("OnDestroy is called")
   }
 }
