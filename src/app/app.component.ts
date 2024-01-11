@@ -5,13 +5,14 @@ import { RoomsComponent } from "./rooms/rooms.component";
 import { HeaderComponent } from "./header/header.component";
 import { ContainerComponent } from './container/container.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { MessageComponent } from "./message/message.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, RoomsComponent, HeaderComponent, ContainerComponent, EmployeeComponent]
+    imports: [CommonModule, RouterOutlet, RoomsComponent, HeaderComponent, ContainerComponent, EmployeeComponent, MessageComponent]
 })
 export class AppComponent implements AfterViewInit, OnInit {
   title = 'hotelinventoryapp';
