@@ -16,4 +16,7 @@
     You are not authorised to view!
   </div>
 </div>
-<app-message [message]="'Hello world!'"></app-message>
+<label for="demoOnChange">Type here to see change in console: </label>
+<input type="text" #inputEl id="demoOnChange" name="demoOnChange">
+<button (click)="onBtnClicked(inputEl)">Click me</button>
+<app-message [message]="inputVal"></app-message>

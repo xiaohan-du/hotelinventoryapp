@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   title = 'hotelinventoryapp';
   role = 'Admin';
   @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
-
+  protected inputVal: string = '';
   ngAfterViewInit(): void {
     //   const componentRef = this.vcr.createComponent(RoomsComponent);
     //   componentRef.instance.rooms.totalRooms = 50;
@@ -27,5 +27,8 @@ export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('name', {static: true}) name!: ElementRef;
   ngOnInit(): void {
       this.name.nativeElement.innerText = "Hilton Hotel";
+  }
+  onBtnClicked(inputEl: HTMLInputElement) {
+    this.inputVal = inputEl.value;
   }
 }
